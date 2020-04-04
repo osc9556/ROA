@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ROAhomeActivity"></activity>
+        <activity android:name=".FriendhomeActivity"></activity>
+        <activity android:name=".FriendActivity" />
+        <activity android:name=".ROAhomeActivity" />
         <activity android:name=".GPSnowActivity" />
         <activity android:name=".GPShomeActivity" />
         <activity android:name=".GPSparkActivity" />
