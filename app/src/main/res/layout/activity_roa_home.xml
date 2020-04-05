@@ -6,84 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/weight_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="무게센서"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="337dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="393dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/success_text"></LinearLayout>
 
-    <TextView
-        android:id="@+id/infrared_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="적외선센서"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="337dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <TextView
-        android:id="@+id/ultra_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="초음파센서"
-        tools:layout_editor_absoluteX="286dp"
-        tools:layout_editor_absoluteY="337dp" />
+        <TextView
+            android:id="@+id/weight_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="   무게센서" />
 
-    <ImageView
-        android:id="@+id/weight_sensor"
-        android:layout_width="29dp"
-        android:layout_height="21dp"
-        app:srcCompat="@android:drawable/presence_online"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="366dp" />
+        <ImageView
+            android:id="@+id/weight_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            app:srcCompat="@android:drawable/presence_online" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/infrared_sensor"
-        android:layout_width="29dp"
-        android:layout_height="21dp"
-        app:srcCompat="@android:drawable/presence_online"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="366dp" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <ImageView
-        android:id="@+id/ultra_sensor"
-        android:layout_width="29dp"
-        android:layout_height="21dp"
-        app:srcCompat="@android:drawable/presence_online"
-        tools:layout_editor_absoluteX="303dp"
-        tools:layout_editor_absoluteY="366dp" />
+        <TextView
+            android:id="@+id/infrared_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 적외선센서" />
 
-    <ImageView
-        android:id="@+id/cancel"
-        android:layout_width="47dp"
-        android:layout_height="44dp"
-        app:srcCompat="?attr/homeAsUpIndicator"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="679dp" />
+        <ImageView
+            android:id="@+id/infrared_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            app:srcCompat="@android:drawable/presence_online" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/ultra_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 초음파센서" />
+
+        <ImageView
+            android:id="@+id/ultra_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            app:srcCompat="@android:drawable/presence_online" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="85dp"
+        android:layout_width="0dp"
         android:layout_height="86dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="181dp" />
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/text1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
         android:text=" CONNECTION"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="202dp" />
+        app:layout_constraintBottom_toTopOf="@+id/success_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image1" />
 
     <TextView
         android:id="@+id/success_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:layout_marginBottom="29dp"
         android:text="SUCCESED...."
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="221dp" />
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/text1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
