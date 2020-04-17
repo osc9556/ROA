@@ -11,11 +11,13 @@ public class GPShomeActivity extends AppCompatActivity {
 
 
     private Button now_lo;
+    private Button parking_lo;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         setContentView(R.layout.activity_gps_home);
+        Intent intent=getIntent();
 
 
 
@@ -28,5 +30,17 @@ public class GPShomeActivity extends AppCompatActivity {
 
             }
         });
+
+
+        parking_lo=findViewById(R.id.parking_lo);
+        parking_lo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(GPShomeActivity.this,GPSparkActivity.class);
+                startActivity(intent);//액티비티 이동
+
+            }
+        });
+
     }
 }
