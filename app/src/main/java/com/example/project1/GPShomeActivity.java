@@ -17,8 +17,6 @@ public class GPShomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps_home);
 
-
-
         now_lo=findViewById(R.id.now_lo);
         now_lo.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findID_button = findViewById(R.id.findID_button);
+        findID_button = findViewById(R.id.findID_button); //아이디 찾기 버튼
         findID_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findPW_button = findViewById(R.id.findPW_button);
+        findPW_button = findViewById(R.id.findPW_button); //비밀번호 찾기 버튼
         findPW_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        sign_button = findViewById(R.id.sign_button);
+        sign_button = findViewById(R.id.sign_button); //회원가입 버튼
         sign_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
