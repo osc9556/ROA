@@ -37,6 +37,7 @@
             android:gravity="center"
             >
             <Button
+                android:id="@+id/ROA_button"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -44,6 +45,7 @@
                 android:textSize="40dp"
                 ></Button>
             <Button
+                android:id="@+id/GPS_button"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -59,6 +61,7 @@
             android:gravity="center"
             >
             <Button
+                android:id="@+id/Friend_button"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -66,6 +69,7 @@
                 android:textSize="40dp"
                 ></Button>
             <Button
+                android:id="@+id/Setting_button"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
