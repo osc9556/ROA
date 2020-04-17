@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".GPSparkActivity"></activity>
+        <activity android:name=".SettingActivity" />
         <activity android:name=".FriendhomeActivity" />
         <activity android:name=".FriendaddActivity" />
         <activity android:name=".ROAhomeActivity" />
         <activity android:name=".GPSnowActivity" />
         <activity android:name=".GPShomeActivity" />
-        <activity android:name=".GPSparkActivity" />
 
         <meta-data
             android:name="com.google.android.actions"
@@ -32,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

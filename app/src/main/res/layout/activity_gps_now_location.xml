@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".GPSnowActivity">
 
     <TextView
         android:id="@+id/gps"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/now_text"
+        android:id="@+id/parking_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -30,8 +30,8 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
-        android:layout_width="363dp"
-        android:layout_height="437dp"
+        android:layout_width="369dp"
+        android:layout_height="449dp"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="32dp"
@@ -39,5 +39,5 @@
         android:layout_marginRight="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/now_text" />
+        app:layout_constraintTop_toBottomOf="@+id/parking_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
