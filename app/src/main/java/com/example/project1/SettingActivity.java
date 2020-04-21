@@ -9,7 +9,10 @@ import android.widget.Button;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private Button ManageFriend_button;
+    private  Button ManageFriend_button;
+    private  Button Alarm_button;
+    private  Button MyPage_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +27,34 @@ public class SettingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        Alarm_button=findViewById(R.id.Alarm_button);
+        Alarm_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(SettingActivity.this,AlarmActivity.class);
+                startActivity(intent);//액티비티 이동
+
+            }
+        });
+
+        MyPage_button=findViewById(R.id.MyPage_button);
+        MyPage_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(SettingActivity.this,MypageActivity.class);
+                startActivity(intent);//액티비티 이동
+
+            }
+        });
     }
+
+
+
+
+
+
+
+
 }
