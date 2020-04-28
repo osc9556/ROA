@@ -9,7 +9,6 @@ import android.widget.Button;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private  Button ManageFriend_button;
     private  Button Alarm_button;
     private  Button MyPage_button;
 
@@ -18,16 +17,6 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
-        ManageFriend_button = findViewById(R.id.ManageFriend_button); //친구관리 버튼
-        ManageFriend_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), FriendaddActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
         Alarm_button=findViewById(R.id.Alarm_button);
         Alarm_button.setOnClickListener(new View.OnClickListener() {
