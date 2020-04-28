@@ -8,40 +8,30 @@
 
     <TextView
         android:id="@+id/gps_text"
-        android:layout_width="73dp"
-        android:layout_height="0dp"
+        android:layout_width="79dp"
+        android:layout_height="48dp"
         android:layout_marginTop="128dp"
-        android:layout_marginBottom="70dp"
         android:text="GPS"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/now_lo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/parking_lo"
-        android:layout_width="191dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="222dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="270dp"
-        android:text="주차 위치"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="272dp"
+        android:layout_marginBottom="34dp"
+        android:background="#D6DADD"
+        android:text="주차위치"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/now_lo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/now_lo" />
-
-    <Button
-        android:id="@+id/now_lo"
-        android:layout_width="191dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
-        android:text="현재 위치"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/parking_lo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gps_text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/cancel"
@@ -53,4 +43,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <Button
+        android:id="@+id/now_lo"
+        android:layout_width="219dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="261dp"
+        android:background="#D6DADD"
+        android:text="현재위치"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parking_lo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
