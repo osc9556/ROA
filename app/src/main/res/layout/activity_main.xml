@@ -14,13 +14,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         >
-        <TextView
-            android:layout_width="wrap_content"
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="313dp"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="ROA"
             android:layout_centerInParent="true"
-            ></TextView>
+            app:srcCompat="@drawable/pic" />
     </RelativeLayout>
 
     <LinearLayout
