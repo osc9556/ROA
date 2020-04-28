@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="23dp"
-        android:text="주차위치1"
+        android:text="주차위치"
         app:layout_constraintBottom_toTopOf="@+id/mapView2"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
