@@ -85,51 +85,56 @@
             android:orientation="vertical"
             android:gravity="center"
             >
+
             <EditText
-                android:layout_margin="10dp"
+                android:id="@+id/idtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                ></EditText>
-            <EditText
                 android:layout_margin="10dp"
+                android:hint=""></EditText>
+
+            <EditText
+                android:id="@+id/pwtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                ></EditText>
-            <EditText
                 android:layout_margin="10dp"
+                android:hint=""></EditText>
+
+            <EditText
+                android:id="@+id/nametext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                ></EditText>
-            <EditText
                 android:layout_margin="10dp"
+                android:hint=""></EditText>
+
+            <EditText
+                android:id="@+id/phtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                ></EditText>
-            <EditText
                 android:layout_margin="10dp"
+                android:hint=""></EditText>
+
+            <EditText
+                android:id="@+id/etext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                ></EditText>
+                android:layout_margin="10dp"
+                android:hint=""></EditText>
         </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        >
+        android:layout_weight="1.5">
+
         <Button
+            android:id="@+id/sign_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="등록"
-            android:textSize="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            ></Button>
+            android:text="등록"
+            android:textSize="30dp"></Button>
     </RelativeLayout>
 </LinearLayout>
