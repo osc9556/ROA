@@ -44,13 +44,22 @@ public class SignActivity extends AppCompatActivity {
         final EditText phtext = (EditText) findViewById(R.id.phtext);
         final EditText etext = (EditText) findViewById(R.id.etext);
 
+
+
+
         sign_button=findViewById(R.id.sign_button);
         sign_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String userID=idtext.getText().toString();
+                String userPassword=pwtext.getText().toString();
+                String userName=nametext.getText().toString();
+                String userPhonenum =phtext.getText().toString();
+                String userEmail=etext.getText().toString();
 
-                if (userID.equals("") || userPassword.equals((""))) {
+                if (userID.equals("") || userPassword.equals(("")))
+                {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignActivity.this);
                     dialog = builder.setMessage("아이디와 비밀번호는 필수 입력입니다")
                             .setNegativeButton(("확인"), null)
