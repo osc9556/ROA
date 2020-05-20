@@ -47,8 +47,9 @@ public class SignActivity extends AppCompatActivity {
 
 
 
-        sign_button=findViewById(R.id.sign_button);
-        sign_button.setOnClickListener(new View.OnClickListener() {
+        Button sign_button=(Button) findViewById(R.id.sign_button);
+        sign_button.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
 
