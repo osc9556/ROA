@@ -68,12 +68,14 @@ public class SignActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
+
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("SUCCESS");
+                            boolean success = jsonResponse.getBoolean("success");
 
                             if (success)
                             {
