@@ -38,17 +38,14 @@ public class SignActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
 
+        final EditText idtext = (EditText) findViewById(R.id.idtext);
+        final EditText pwtext = (EditText) findViewById(R.id.pwtext);
+        final EditText nametext = (EditText) findViewById(R.id.nametext);
+        final EditText phtext = (EditText) findViewById(R.id.phtext);
+        final EditText etext = (EditText) findViewById(R.id.etext);
 
         sign_button=findViewById(R.id.sign_button);
         sign_button.setOnClickListener(new View.OnClickListener() {
-
-
-            final EditText idtext = (EditText) findViewById(R.id.idtext);
-            final EditText pwtext = (EditText) findViewById(R.id.pwtext);
-            final EditText nametext = (EditText) findViewById(R.id.nametext);
-            final EditText phtext = (EditText) findViewById(R.id.phtext);
-            final EditText etext = (EditText) findViewById(R.id.etext);
-
             @Override
             public void onClick(View v) {
 
