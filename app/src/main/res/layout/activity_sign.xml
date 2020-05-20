@@ -25,66 +25,64 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="793dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            android:orientation="vertical">
+
             <TextView
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
                 android:text="ID"
-                android:textSize="27dp"
-                android:gravity="center"
-                ></TextView>
+                android:textSize="27dp"></TextView>
+
             <TextView
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
                 android:text="PW"
-                android:textSize="27dp"
-                android:gravity="center"
-                ></TextView>
+                android:textSize="27dp"></TextView>
+
             <TextView
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
                 android:text="NAME"
-                android:textSize="27dp"
-                android:gravity="center"
-                ></TextView>
+                android:textSize="27dp"></TextView>
+
             <TextView
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
                 android:text="PHONE"
-                android:textSize="27dp"
-                android:gravity="center"
-                ></TextView>
+                android:textSize="27dp"></TextView>
+
             <TextView
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:text="E-MAIL"
-                android:textSize="27dp"
+                android:layout_margin="10dp"
                 android:gravity="center"
-                ></TextView>
+                android:text="E-MAIL"
+                android:textSize="27dp"></TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/idtext"

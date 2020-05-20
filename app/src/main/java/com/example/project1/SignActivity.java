@@ -59,7 +59,7 @@ public class SignActivity extends AppCompatActivity {
                 String userPhonenum =phtext.getText().toString();
                 String userEmail=etext.getText().toString();
 
-                if (userID.equals("") || userPassword.equals(("")))
+                if (userID.equals("") || userPassword.equals(""))
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignActivity.this);
                     dialog = builder.setMessage("아이디와 비밀번호는 필수 입력입니다")
