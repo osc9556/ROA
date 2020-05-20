@@ -79,7 +79,7 @@ public class SignActivity extends AppCompatActivity {
                             {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(SignActivity.this);
                                 dialog = builder.setMessage("회원등록에 성공했습니다")
-                                        .setPositiveButton(("확인"), null)
+                                        .setPositiveButton("확인", null)
                                         .create();
                                 dialog.show();
                                 finish();
