@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        
+
 
         findID_button = findViewById(R.id.findID_button); //아이디 찾기 버튼
         findID_button.setOnClickListener(new View.OnClickListener() {
