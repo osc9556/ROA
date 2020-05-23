@@ -1,139 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="30dp"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:orientation="vertical"
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="Sign"
-            android:layout_centerInParent="true"
-            ></TextView>
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/new_id"
+        android:hint="your@id.com" />
 
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="793dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="ID"
-                android:textSize="27dp"></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="PW"
-                android:textSize="27dp"></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="NAME"
-                android:textSize="27dp"></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="PHONE"
-                android:textSize="27dp"></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="E-MAIL"
-                android:textSize="27dp"></TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/idtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint=""></EditText>
-
-            <EditText
-                android:id="@+id/pwtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint=""></EditText>
-
-            <EditText
-                android:id="@+id/nametext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint=""></EditText>
-
-            <EditText
-                android:id="@+id/phtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint=""></EditText>
-
-            <EditText
-                android:id="@+id/etext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint=""></EditText>
-        </LinearLayout>
-    </LinearLayout>
-
-    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/new_pw"
+        android:hint="password" />
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5">
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/new_name"
+        android:hint="이름" />
 
-        <Button
-            android:id="@+id/sign_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:text="등록"
-            android:textSize="30dp">
-           </Button>
-    </RelativeLayout>
+    <EditText
+        android:id="@+id/new_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="핸드폰번호"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/new_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="이메일주소"
+        android:inputType="text" />
+
+
+    <Button
+        android:text="SUBMIT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_submit"
+        android:onClick="insert"/>
+
+    <Button
+        android:text="SIGN UP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_signup"
+        android:layout_below="@+id/btn_signin"
+        android:layout_centerHorizontal="true"
+        android:onClick="CliSignUp"/>
 </LinearLayout>
+

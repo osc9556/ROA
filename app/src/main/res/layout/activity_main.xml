@@ -36,18 +36,18 @@
             android:orientation="vertical"
             android:layout_gravity="center"
             >
+
             <EditText
+                android:id="@+id/idText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID"
-                >
-            </EditText>
+                android:hint="ID"></EditText>
+
             <EditText
+                android:id="@+id/passwordText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PASSWORD"
-                >
-            </EditText>
+                android:hint="PASSWORD"></EditText>
         </LinearLayout>
 
         <Button

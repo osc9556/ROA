@@ -1,26 +1,13 @@
 package com.example.project1;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -31,38 +18,37 @@ import java.net.URLEncoder;
 
 public class SignActivity extends AppCompatActivity {
 
-    private Button sign_button;
-    private AlertDialog dialog;
     private EditText editTextId;
     private EditText editTextPw;
-    private EditText editTextName;
-    private EditText editTextphone;
-    private EditText editTextEmail;
+    private EditText editTextname;
+    private EditText editTextph;
+    private EditText editTextemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
 
-        editTextId = (EditText) findViewById(R.id.idtext);
-        editTextPw = (EditText) findViewById(R.id.pwtext);
-        editTextName=(EditText) findViewById(R.id.nametext);
-        editTextphone=(EditText) findViewById(R.id.phtext);
-        editTextEmail= (EditText) findViewById(R.id.etext);
+        editTextId = (EditText) findViewById(R.id.new_id);
+        editTextPw = (EditText) findViewById(R.id.new_pw);
+        editTextname = (EditText) findViewById(R.id.new_name);
+        editTextph = (EditText) findViewById(R.id.new_phone);
+        editTextemail = (EditText) findViewById(R.id.new_email);
 
 
     }
-
     public void insert(View view) {
         String Id = editTextId.getText().toString();
         String Pw = editTextPw.getText().toString();
-        String Name = editTextName.getText().toString();
-        String Phone = editTextphone.getText().toString();
-        String Email = editTextEmail.getText().toString();
+        String Name = editTextname.getText().toString();
+        String Phone = editTextph.getText().toString();
+        String Email = editTextemail.getText().toString();
 
-
-        insertoToDatabase(Id, Pw, Name, Phone, Email);
+        insertoToDatabase(Id, Pw,Name,Phone,Email);
     }
+
+
+
     private void insertoToDatabase(String Id, String Pw, String Name, String Phone, String Email) {
         class InsertData extends AsyncTask<String, Void, String> {
             ProgressDialog loading;
@@ -87,12 +73,12 @@ public class SignActivity extends AppCompatActivity {
                     String Phone = (String) params[3];
                     String Email = (String) params[4];
 
-                    String link = "http://15.164.233.187/phpmyadmin/usersign.php";
+                    String link = "http://15.164.233.187/usersign.php";
                     String data = URLEncoder.encode("Id", "UTF-8") + "=" + URLEncoder.encode(Id, "UTF-8");
                     data += "&" + URLEncoder.encode("Pw", "UTF-8") + "=" + URLEncoder.encode(Pw, "UTF-8");
-                    data += "&" + URLEncoder.encode("Name", "UTF-8") + "=" + URLEncoder.encode(Pw, "UTF-8");
-                    data += "&" + URLEncoder.encode("Phone", "UTF-8") + "=" + URLEncoder.encode(Pw, "UTF-8");
-                    data += "&" + URLEncoder.encode("Email", "UTF-8") + "=" + URLEncoder.encode(Pw, "UTF-8");
+                    data += "&" + URLEncoder.encode("Name", "UTF-8") + "=" + URLEncoder.encode(Name, "UTF-8");
+                    data += "&" + URLEncoder.encode("Phone", "UTF-8") + "=" + URLEncoder.encode(Phone, "UTF-8");
+                    data += "&" + URLEncoder.encode("Email", "UTF-8") + "=" + URLEncoder.encode(Email, "UTF-8");
 
                     URL url = new URL(link);
                     URLConnection conn = url.openConnection();
@@ -115,11 +101,11 @@ public class SignActivity extends AppCompatActivity {
                     }
                     return sb.toString();
                 } catch (Exception e) {
-                    return new String("Exception: " + e.getMessage());
+                    return new String("회원가입 할 수 없습니다: " + e.getMessage());
                 }
             }
         }
         InsertData task = new InsertData();
-        task.execute(Id, Pw ,Name,Phone,Email);
+        task.execute(Id, Pw,Name,Phone,Email);
     }
 }
