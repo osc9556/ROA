@@ -101,14 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        login_button=findViewById(R.id.login_button);
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-        public void onClick(View v) {
-            Intent intent =new Intent(MainActivity.this,MenuActivity.class);
-            startActivity(intent);//액티비티 이동
-        }
-    });
+        
 
         findID_button = findViewById(R.id.findID_button); //아이디 찾기 버튼
         findID_button.setOnClickListener(new View.OnClickListener() {
