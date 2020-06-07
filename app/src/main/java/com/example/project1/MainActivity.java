@@ -21,16 +21,12 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     private Button login_button;
     private Button findID_button;
     private Button findPW_button;
     private Button sign_button;
     private EditText idText;
     private EditText passwordText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 final String userID = idText.getText().toString();
                 final String userPassword = passwordText.getText().toString();
 
+                LoginText LT = (LoginText)getApplicationContext();
+                LT.setID(userID);
 
                 //4. 콜백 처리부분(volley 사용을 위한 ResponseListener 구현 부분)
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -75,15 +73,6 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("userPassword", userPassword);
                                 MainActivity.this.startActivity(intent);
 
-                                LoginText LT = (LoginText) getApplication(); //전역변수 보내는 부분
-                                LT.setID(userID);
-                                LT.setPW(userPassword);
-
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                                builder.setTitle("제목");
-                                builder.setMessage(LT.getID() + LT.getPW());
-                                builder.setNeutralButton("취소", null);
-                                builder.create().show();
 
                             }else{//로그인 실패시
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

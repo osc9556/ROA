@@ -1,24 +1,26 @@
-package com.example.project1; // ID, PW 전역변수
+package com.example.project1;
 
 import android.app.Application;
 
 public class LoginText extends Application {
     private String ID;
-    private String PW;
-    public String getID() // ID 불러오기
-    {
-        return ID;
+
+    @Override
+    public void onCreate(){
+        ID = "";
+        super.onCreate();
     }
-    public String getPW() // PW 불러오기
-    {
-        return PW;
+
+    @Override
+    public void onTerminate(){
+        super.onTerminate();
     }
-    public void setID(String ID) // ID 저장하기
-    {
+
+    public void setID(String ID){
         this.ID = ID;
     }
-    public void setPW(String PW) // PW 저장하기
-    {
-        this.PW = PW;
+
+    public String getID(){
+        return ID;
     }
 }
