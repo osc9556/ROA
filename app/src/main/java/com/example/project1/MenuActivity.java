@@ -15,17 +15,24 @@ public class MenuActivity extends AppCompatActivity {
     private Button Friend_button;
     private Button Setting_button;
 
+    private Button test_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        LoginText LT = (LoginText) getApplication();
-        AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
-        builder.setTitle("제목");
-        builder.setMessage(LT.getID() + LT.getPW());
-        builder.setNeutralButton("취소", null);
-        builder.create().show();
+        test_button = findViewById(R.id.test_button);
+        test_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                LoginText LT = (LoginText) getApplicationContext();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+                builder.setTitle("제목");
+                builder.setMessage(LT.getID());
+                builder.setNeutralButton("취소", null);
+                builder.create().show();
+            }
+        });
 
 
         ROA_button = findViewById(R.id.ROA_button); //ROA 버튼

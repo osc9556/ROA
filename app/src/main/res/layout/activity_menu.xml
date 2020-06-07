@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:padding="30dp"
+    tools:context=".MenuActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -26,60 +26,64 @@
             android:layout_marginBottom="5dp"
             android:text="로그아웃"
             android:textSize="25dp"></Button>
+
+        <Button
+            android:id="@+id/test_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <Button
                 android:id="@+id/ROA_button"
-                android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:text="ROA"
-                android:textSize="40dp"
-                ></Button>
+                android:textSize="40dp"></Button>
+
             <Button
                 android:id="@+id/GPS_button"
-                android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:text="GPS"
-                android:textSize="40dp"
-                ></Button>
+                android:textSize="40dp"></Button>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <Button
                 android:id="@+id/Friend_button"
-                android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:text="친구"
-                android:textSize="40dp"
-                ></Button>
+                android:textSize="40dp"></Button>
+
             <Button
                 android:id="@+id/Setting_button"
-                android:layout_margin="10dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_margin="10dp"
                 android:text="설정"
-                android:textSize="40dp"
-                ></Button>
+                android:textSize="40dp"></Button>
         </LinearLayout>
     </LinearLayout>
 
