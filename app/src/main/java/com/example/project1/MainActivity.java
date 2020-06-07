@@ -79,7 +79,11 @@ public class MainActivity extends AppCompatActivity {
                                 LT.setID(userID);
                                 LT.setPW(userPassword);
 
-
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                builder.setTitle("제목");
+                                builder.setMessage(LT.getID() + LT.getPW());
+                                builder.setNeutralButton("취소", null);
+                                builder.create().show();
 
                             }else{//로그인 실패시
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
