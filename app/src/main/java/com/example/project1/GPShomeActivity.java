@@ -12,6 +12,7 @@ public class GPShomeActivity extends AppCompatActivity {
 
     private Button now_lo;
     private Button parking_lo;
+    private Button logout_button;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -37,6 +38,15 @@ public class GPShomeActivity extends AppCompatActivity {
                 Intent intent =new Intent(GPShomeActivity.this,GPSparkActivity.class);
                 startActivity(intent);//액티비티 이동
 
+            }
+        });
+
+        logout_button = findViewById(R.id.button); //로그아웃 버튼
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
