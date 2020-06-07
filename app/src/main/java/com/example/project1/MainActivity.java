@@ -1,7 +1,6 @@
 package com.example.project1;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -78,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
                                 LoginText LT = (LoginText) getApplication(); //전역변수 보내는 부분
                                 LT.setID(userID);
                                 LT.setPW(userPassword);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                builder.setTitle("제목");
+                                builder.setMessage(LT.getID() + LT.getPW());
+                                builder.setNeutralButton("취소", null);
+                                builder.create().show();
 
 
 
