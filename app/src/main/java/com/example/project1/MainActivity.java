@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText idText;
     private EditText passwordText;
 
+    private LoginText LT = null;
 
 
     @Override
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText passwordText = (EditText)findViewById(R.id.passwordText);
         final Button loginbtn = (Button)findViewById(R.id.login_button);
 
+        LT = (LoginText)getApplicationContext();
+        LT.setID(idText.getText().toString());
 
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 final String userID = idText.getText().toString();
                 final String userPassword = passwordText.getText().toString();
 
-                LoginText LT = (LoginText)getApplicationContext();
-                LT.setID(userID);
 
                 //4. 콜백 처리부분(volley 사용을 위한 ResponseListener 구현 부분)
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
