@@ -1,7 +1,6 @@
 package com.example.project1;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -74,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("userID", userID);
                                 intent.putExtra("userPassword", userPassword);
                                 MainActivity.this.startActivity(intent);
-
-                                LoginText LT = (LoginText) getApplication(); //전역변수 보내는 부분
-                                LT.setID(userID);
-                                LT.setPW(userPassword);
-
-
 
                             }else{//로그인 실패시
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
