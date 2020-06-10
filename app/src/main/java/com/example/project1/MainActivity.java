@@ -22,28 +22,24 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
 
-
-    private Button login_button;
     private Button findID_button;
     private Button findPW_button;
     private Button sign_button;
-    private EditText idText;
-    private EditText passwordText;
-
+  //  private Button login_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         final EditText idText = (EditText)findViewById(R.id.idText);
         final EditText passwordText = (EditText)findViewById(R.id.passwordText);
         final Button loginbtn = (Button)findViewById(R.id.login_button);
 
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 final String userID = idText.getText().toString();
                 final String userPassword = passwordText.getText().toString();
 
@@ -97,12 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 queue.add(loginRequest);
             }
         });
-
-
-
-
-
-
 
 
         findID_button = findViewById(R.id.findID_button); //아이디 찾기 버튼

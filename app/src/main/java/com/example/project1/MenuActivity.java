@@ -14,7 +14,6 @@ public class MenuActivity extends AppCompatActivity {
     private Button GPS_button;
     private Button Friend_button;
     private Button Setting_button;
-
     private Button logout_button;
 
     @Override
@@ -35,7 +34,7 @@ public class MenuActivity extends AppCompatActivity {
         ROA_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ROAhomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(),ROAhomeActivity.class);
                 startActivity(intent);
             }
         });

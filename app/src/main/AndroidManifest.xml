@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AlarmActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
         <activity android:name=".MypageActivity" />
         <activity android:name=".GPSparkActivity" />
         <activity android:name=".SettingActivity" />
@@ -25,7 +26,6 @@
             android:name="com.google.android.actions"
             android:resource="@xml/actions1" />
 
-        <activity android:name=".MenuActivity" />
         <activity android:name=".SignActivity" />
         <activity android:name=".FindPassActivity" />
         <activity android:name=".FindIdActivity" />
