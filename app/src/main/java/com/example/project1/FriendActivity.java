@@ -83,6 +83,8 @@ public class FriendActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progressDialog = ProgressDialog.show(FriendActivity.this,
+                    "Please Wait", null, true, true);
 
         }
 
