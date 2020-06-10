@@ -57,7 +57,7 @@ public class MenuActivity extends AppCompatActivity {
         Friend_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), FriendhomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(),FriendActivity.class);
                 startActivity(intent);
             }
         });

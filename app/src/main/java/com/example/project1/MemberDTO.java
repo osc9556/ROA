@@ -11,19 +11,19 @@ public class MemberDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String userID;
-    private String userPassword;
     private String userName;
-    private Integer userAge;
+    private String userEmail;
+
 
 
     public MemberDTO() {
     }
 
-    public MemberDTO(String userID, String userPassword, String userName, Integer userAge) {
+    public MemberDTO(String userID,  String userName, String userEmail) {
         this.userID = userID;
-        this.userPassword = userPassword;
         this.userName = userName;
-        this.userAge = userAge;
+        this.userEmail = userEmail;
+
     }
 
     public String getUserID() {
@@ -34,12 +34,12 @@ public class MemberDTO implements Serializable {
         this.userID = userID;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUserName() {
@@ -50,21 +50,14 @@ public class MemberDTO implements Serializable {
         this.userName = userName;
     }
 
-    public Integer getUserAge() {
-        return userAge;
-    }
 
-    public void setUserAge(Integer userAge) {
-        this.userAge = userAge;
-    }
 
     @Override
     public String toString() {
         return "MemberDTO{" +
                 "userID='" + userID + '\'' +
-                ", userPassword='" + userPassword + '\'' +
+                ", userPassword='" + userEmail + '\'' +
                 ", userName='" + userName + '\'' +
-                ", userAge=" + userAge +
                 '}';
     }
 }
