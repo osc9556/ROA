@@ -11,12 +11,22 @@ public class SettingActivity extends AppCompatActivity {
 
     private  Button Alarm_button;
     private  Button MyPage_button;
+    private Button logout_button;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        logout_button = findViewById(R.id.button); //로그아웃 버튼
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Alarm_button=findViewById(R.id.Alarm_button);
         Alarm_button.setOnClickListener(new View.OnClickListener() {
