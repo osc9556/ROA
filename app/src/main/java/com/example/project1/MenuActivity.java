@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        logout_button = findViewById(R.id.button); //로그아웃 버튼
+      /* logout_button = findViewById(R.id.button); //로그아웃 버튼
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
         ROA_button = findViewById(R.id.ROA_button); //ROA 버튼
         ROA_button.setOnClickListener(new View.OnClickListener() {
             @Override

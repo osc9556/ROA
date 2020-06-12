@@ -1,8 +1,8 @@
 package com.example.project1;
-
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,15 +12,16 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -30,14 +31,14 @@ import java.util.HashMap;
 
 public class FriendActivity extends AppCompatActivity {
 
-    private static String TAG = "phpquerytest";
+    private static String TAG = "project1";
 
-    private static final String TAG_JSON="webnautes";
+    private static final String TAG_JSON="example";
     private static final String TAG_ID = "id";
     private static final String TAG_NAME = "name";
     private static final String TAG_ADDRESS ="address";
 
-
+    private TextView mTextViewResult;
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mListViewList;
     EditText mEditTextSearchKeyword1;
@@ -48,12 +49,11 @@ public class FriendActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends);
+        setContentView(R.layout.activity_main);
 
-
+        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
         mListViewList = (ListView) findViewById(R.id.listView_main_list);
         mEditTextSearchKeyword1 = (EditText) findViewById(R.id.editText_main_searchKeyword1);
-
 
 
         Button button_search = (Button) findViewById(R.id.button_main_search);
@@ -83,11 +83,30 @@ public class FriendActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
             progressDialog = ProgressDialog.show(FriendActivity.this,
                     "Please Wait", null, true, true);
-
         }
 
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            mTextViewResult.setText(result);
+            Log.d(TAG, "response - " + result);
+
+            if (result == null){
+
+                mTextViewResult.setText(errorString);
+            }
+            else {
+
+                mJsonString = result;
+                showResult();
+            }
+        }
 
 
         @Override
@@ -95,8 +114,9 @@ public class FriendActivity extends AppCompatActivity {
 
             String searchKeyword1 = params[0];
 
+
             String serverURL = "http://15.164.233.187/Usearch.php";
-            String postParameters = "id" + searchKeyword1;
+            String postParameters = "id=" + searchKeyword1 ;
 
 
             try {
