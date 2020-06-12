@@ -2,18 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project1">
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".LoginText"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AlarmActivity"></activity>
-        <activity android:name=".MenuActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".FriendActivity" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".MypageActivity" />
         <activity android:name=".GPSparkActivity" />
         <activity android:name=".SettingActivity" />
@@ -37,7 +39,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 </manifest>
