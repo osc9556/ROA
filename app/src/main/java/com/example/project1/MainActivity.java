@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private Button findID_button;
     private Button findPW_button;
     private Button sign_button;
-  //  private Button login_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

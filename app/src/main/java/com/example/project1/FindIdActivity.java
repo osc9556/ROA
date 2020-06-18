@@ -1,89 +1,109 @@
 package com.example.project1;
 
+import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.URI;
+import java.net.HttpURLConnection;
 import java.net.URL;
+
 
 public class FindIdActivity extends AppCompatActivity {
 
-    private Button Find_button;
-    private String a = "";
+    String myJSON;
+    String ID;
 
-    phpdo task;
+    private static final String TAG_RESULTS = "result";
+    private static final String TAG_ID = "userID";
+
+    JSONArray User_ID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
+        final EditText Phonenum = (EditText) findViewById(R.id.Phonenum);
+        final Button Find_Button = (Button) findViewById(R.id.Find_button);
 
-        final EditText Email = (EditText)findViewById(R.id.Email);
-
-        Find_button = findViewById(R.id.Find_button); //로그아웃 버튼
-        Find_button.setOnClickListener(new View.OnClickListener() {
+        Find_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String E_mail = Email.getText().toString();
-
-                task = new phpdo();
-                task.execute(E_mail);
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(FindIdActivity.this);
+                final String userPhonenum = Phonenum.getText().toString();
+                getData("http://15.164.233.187/findID.php?userPhonenum=" + userPhonenum);
 
             }
         });
     }
 
-    private class phpdo extends AsyncTask<String,Void,String>{
+    protected void showData() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            //User_ID = jsonObj.getJSONArray(TAG_RESULTS).toString();
+           // User_ID = jsonObj.getString(TAG_RESULTS);
+            User_ID = jsonObj.getJSONArray(TAG_RESULTS);
+            for (int i = 0; i < User_ID.length(); i++) {
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+                JSONObject c = User_ID.getJSONObject(i);
+                ID = c.getString(TAG_ID);
+            }
 
-        protected void onPreExecute(){
-
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(FindIdActivity.this);
+        builder.setTitle("");
+        builder.setMessage("아이디는 " + ID + "입니다.");
+        builder.setNegativeButton("닫기", null);
+        builder.create().show();
+    }
+
+public void getData(String url) {
+    class GetDataJSON extends AsyncTask<String, Void, String> {
         @Override
-        protected String doInBackground(String... arg0) {
-            try{
-                String email = arg0[0];
+        protected String doInBackground(String... params) {
 
-                String link = "http://15.164.233.187/findID.php?userEmail=" + email;
-                URL url = new URL(link);
-                HttpClient client = new DefaultHttpClient();
-                HttpGet request = new HttpGet();
-                request.setURI(new URI(link));
-                HttpResponse response = client.execute(request);
-                BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+            String uri = params[0];
 
-                StringBuffer sb = new StringBuffer("");
-                String line = "";
+            BufferedReader bufferedReader = null;
+            try {
+                URL url = new URL(uri);
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                StringBuilder sb = new StringBuilder();
 
-                while((line = in.readLine()) != null){
-                    sb.append(line);
-                    break;
+                bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String json;
+                while ((json = bufferedReader.readLine()) != null) {
+                    sb.append(json + "\n");
                 }
-                in.close();
-                return sb.toString();
+
+                return sb.toString().trim();
             } catch (Exception e) {
-                return new String("Exception: " + e.getMessage());
+                return null;
             }
         }
 
         @Override
-        protected void onPostExecute(String result){
-            a = result;
+        protected void onPostExecute(String result) {
+            myJSON = result;
+            showData();
         }
     }
+    GetDataJSON g = new GetDataJSON();
+    g.execute(url);
 }
+}
+
