@@ -1,70 +1,101 @@
-package com.example.project1;
+package com.example.bluetoothactivity;
 
 
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-        import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
-        import app.akexorcist.bluetotohspp.library.BluetoothSPP;
-        import app.akexorcist.bluetotohspp.library.BluetoothState;
-        import app.akexorcist.bluetotohspp.library.DeviceList;
+import app.akexorcist.bluetotohspp.library.BluetoothSPP;
+import app.akexorcist.bluetotohspp.library.BluetoothState;
+import app.akexorcist.bluetotohspp.library.DeviceList;
 
-        import android.os.Bundle;
-        import android.app.Activity;
-        import android.bluetooth.BluetoothAdapter;
-        import android.content.Intent;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toast;
 
 public class BluetoothActivity extends AppCompatActivity {
     private BluetoothSPP bt;
+    static String Data_distance;
+    //PUSH object
+    final NotificationManager notificationManager = (NotificationManagerBluetoothActivity.this.getSystemService(BluetoothActivity.this.NOTIFICATION_SERVICE);
+    final Intent intent = new Intent(BluetoothActivity.this.getApplicationContext(),BluetoothActivity.class);
+    final Notification.Builder builder = new Notification.Builder(getApplicationContext());
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = new BluetoothSPP(this); //Initializing
 
-        if (!bt.isBluetoothAvailable()) { //블루투스 사용 불가
+        bt = new BluetoothSPP(this); //Initializing
+        if (!bt.isBluetoothAvailable()) { //블루투스 사용 불가  //distancebluetooth
             Toast.makeText(getApplicationContext()
                     , "Bluetooth is not available"
                     , Toast.LENGTH_SHORT).show();
             finish();
         }
+
         bt.setOnDataReceivedListener(new BluetoothSPP.OnDataReceivedListener() {
             //데이터 수신
-            TextView distance = findViewById(R.id.distance);
+
+            TextView weight = findViewById(R.id.weight);
+            private TextView distance = findViewById(R.id.distance);
+
 
             public void onDataReceived(byte[] data, String message) {
-
                 String[] array = message.split(",");
-                distance.setText(array[0].concat("cm\n"));
-                // Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                distance.setText(array[0]);  //distance display
+            //    weight.setText(array[1].concat("lbs"));   //weight display
+                Data_distance = distance.getText().toString();
+                int num = Integer.parseInt(Data_distance);
+                if(num <= 20){
+
+                    Toast.makeText(getApplicationContext(),"ARARM",Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
+
         bt.setBluetoothConnectionListener(new BluetoothSPP.BluetoothConnectionListener() { //연결됐을 때
             public void onDeviceConnected(String name, String address) {
                 address = "98:D3:91:FD:46:92";
                 Toast.makeText(getApplicationContext()
                         , "Connected to " + name + "\n" + address
                         , Toast.LENGTH_SHORT).show();
+                TextView connect_text = findViewById(R.id.connect_text);
+                connect_text.setText("CONNECTION SUCCESS");
             }
 
             public void onDeviceDisconnected() { //연결해제
                 Toast.makeText(getApplicationContext()
                         , "Connection lost", Toast.LENGTH_SHORT).show();
+                TextView connect_text = findViewById(R.id.connect_text);
+                connect_text.setText("CONNECTION LOST");
             }
 
             public void onDeviceConnectionFailed() { //연결실패
                 Toast.makeText(getApplicationContext()
                         , "Unable to connect", Toast.LENGTH_SHORT).show();
+                TextView connect_text = findViewById(R.id.connect_text);
+                connect_text.setText("CONNECTION FAILED");
             }
         });
 
-        Button btnConnect = findViewById(R.id.btnConnect); //연결시도
-        btnConnect.setOnClickListener(new View.OnClickListener() {
+        Button Conn_bluetooth = findViewById(R.id.Conn_bluetooth); //연결시도
+        Conn_bluetooth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
                     bt.disconnect();
@@ -74,7 +105,8 @@ public class BluetoothActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+
+    }//OnCreate END
     public void onDestroy() {
         super.onDestroy();
         bt.stopService(); //블루투스 중지
@@ -95,14 +127,6 @@ public class BluetoothActivity extends AppCompatActivity {
     }
 
     public void setup() {
-        Button btnSend = findViewById(R.id.btnSend); //데이터 전송
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                bt.send("Connect Bluetooth", true);
-
-
-            }
-        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
